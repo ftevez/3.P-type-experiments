@@ -183,7 +183,7 @@ export default function KineticExperiment() {
                 color: "var(--ink)",
               }}
             >
-              {char}
+              {char === " " ? " " : char}
             </span>
           ))}
         </div>
