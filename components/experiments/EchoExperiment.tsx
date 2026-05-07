@@ -10,7 +10,7 @@ export default function EchoExperiment() {
   return (
     <div>
       <p className="font-mono" style={{ fontSize: "0.75rem", color: "var(--slate)", marginBottom: "3rem" }}>
-        ↑ Adjust the controls to sculpt the echo. Watch a single word become infinite depth.
+        ↑ Adjust the sliders to change the echo.
       </p>
 
       {/* Main echo display */}
