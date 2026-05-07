@@ -63,7 +63,7 @@ export default function Home() {
           background: "var(--ink)",
         }}>
           <div className="animate-marquee" style={{ display: "flex", whiteSpace: "nowrap", gap: "4rem" }}>
-            {Array(8).fill("TYPE IS STRANGE · HOVER SOMETHING · WATCH IT BREAK · LETTERS HAVE WEIGHT · SCATTER · ECHO · CORRUPT · ").map((t, i) => (
+            {Array(8).fill("INSERT COOL AND PROFOUND TEXT HERE · ").map((t, i) => (
               <span key={i} className="font-display" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--acid)" }}>{t}</span>
             ))}
           </div>
