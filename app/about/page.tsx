@@ -46,22 +46,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="animate-fade-up delay-500" style={{ borderTop: "1px solid var(--ink)", marginTop: "5rem", paddingTop: "3rem", paddingBottom: "1rem" }}>
-          <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "2rem" }}>EXPERIMENTS —</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
-            {[
-              { num: "001", title: "Kinetic Text", note: "Scatter and snap" },
-              { num: "002", title: "Glitch Machine", note: "Chromatic corruption" },
-              { num: "003", title: "Echo Chamber", note: "Layered depth" },
-            ].map((e) => (
-              <div key={e.num}>
-                <div className="font-mono" style={{ fontSize: "0.6rem", letterSpacing: "0.2em", color: "var(--slate)", marginBottom: "0.25rem" }}>EXP.{e.num}</div>
-                <div className="font-display" style={{ fontSize: "1.1rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "-0.01em" }}>{e.title}</div>
-                <div className="font-serif" style={{ fontSize: "0.9rem", fontStyle: "italic", color: "var(--slate)", marginTop: "0.25rem" }}>{e.note}</div>
-              </div>
-            ))}
-          </div>
-        </div>
 
 
       </div>
