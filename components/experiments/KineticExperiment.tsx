@@ -55,6 +55,7 @@ const phrases = [
 export default function KineticExperiment() {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [exploded, setExploded] = useState(false);
+  const [staggerKey, setStaggerKey] = useState(0);
 
   const explodeAll = () => {
     setExploded(true);
@@ -148,11 +149,29 @@ export default function KineticExperiment() {
       </button>
 
       <div style={{ borderTop: "1px solid var(--ink)", paddingTop: "3rem" }}>
-        <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1.5rem" }}>
-          STAGGERED ENTRANCE —
-        </p>
-        <div style={{ overflow: "hidden" }}>
-          {"THE QUICK BROWN FOX".split("").map((char, i) => (
+        <div style={{ display: "flex", alignItems: "baseline", gap: "1.5rem", marginBottom: "1.5rem" }}>
+          <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", margin: 0 }}>
+            STAGGERED ENTRANCE —
+          </p>
+          <button
+            onClick={() => setStaggerKey(k => k + 1)}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: "0.6rem",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              padding: "2px 10px",
+              border: "1px solid var(--ink)",
+              background: "transparent",
+              color: "var(--ink)",
+              cursor: "pointer",
+            }}
+          >
+            REPLAY
+          </button>
+        </div>
+        <div key={staggerKey} style={{ overflow: "hidden" }}>
+          {"STAGGERED TEXT".split("").map((char, i) => (
             <span
               key={i}
               className="font-serif animate-fade-up"
@@ -161,10 +180,10 @@ export default function KineticExperiment() {
                 fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
                 animationDelay: `${i * 0.04}s`,
                 opacity: 0,
-                color: char === " " ? "transparent" : "var(--ink)",
+                color: "var(--ink)",
               }}
             >
-              {char === " " ? " " : char}
+              {char}
             </span>
           ))}
         </div>
