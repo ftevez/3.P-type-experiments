@@ -1,9 +1,7 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
-const WORD = "TYPOGRAPHY";
-
-function Letter({ char, index }: { char: string; index: number }) {
+function Letter({ char, index, exploding }: { char: string; index: number; exploding: boolean }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
 
@@ -18,6 +16,11 @@ function Letter({ char, index }: { char: string; index: number }) {
     setOffset({ x: 0, y: 0 });
     setHovered(false);
   };
+
+  useEffect(() => {
+    if (exploding) scatter();
+    else snap();
+  }, [exploding]);
 
   return (
     <span
@@ -84,7 +87,7 @@ export default function KineticExperiment() {
           userSelect: "none",
         }}>
           {phrases[currentPhrase].split("").map((char, i) => (
-            <Letter key={`${currentPhrase}-${i}`} char={char} index={i} />
+            <Letter key={`${currentPhrase}-${i}`} char={char} index={i} exploding={exploded} />
           ))}
         </div>
 
