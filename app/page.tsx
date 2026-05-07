@@ -6,7 +6,7 @@ const experiments = [
     number: "001",
     title: "Kinetic Text",
     subtitle: "Words in motion",
-    description: "Type that responds to your cursor — letters scatter, orbit, and snap back. Physics-based interactions with pure React state.",
+    description: "Letters that scatter when you hover over them and snap back when you leave. Simple premise, surprisingly satisfying.",
     tags: ["Motion", "Cursor", "CSS"],
     color: "var(--acid)",
   },
@@ -15,7 +15,7 @@ const experiments = [
     number: "002",
     title: "Glitch Machine",
     subtitle: "Corrupted language",
-    description: "Enter any text and watch it dissolve into digital noise. Randomized glitch layers, scanlines, and chromatic aberration.",
+    description: "Type something and watch it fall apart. The corrupted version is usually more interesting than what you typed.",
     tags: ["Glitch", "Input", "Animation"],
     color: "var(--rust)",
   },
@@ -24,7 +24,7 @@ const experiments = [
     number: "003",
     title: "Echo Chamber",
     subtitle: "Depth through repetition",
-    description: "A single word echoes through layers of transparency and scale. Control depth, spread, and hue to sculpt infinite typographic space.",
+    description: "A single word, echoed through layers of transparency and scale. Push the depth far enough and it stops looking like language.",
     tags: ["Layers", "Depth", "Interactive"],
     color: "#a0c4ff",
   },
@@ -50,7 +50,7 @@ export default function Home() {
 
         <div className="animate-fade-up delay-300" style={{ marginTop: "2rem", maxWidth: "520px" }}>
           <p className="font-mono" style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "var(--slate)" }}>
-            A laboratory for interactive typography. Three experiments exploring how text can move, break, and multiply.
+            Three experiments in what type can do when you actually mess with it. Started with a question. Ended up here.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function Home() {
           background: "var(--ink)",
         }}>
           <div className="animate-marquee" style={{ display: "flex", whiteSpace: "nowrap", gap: "4rem" }}>
-            {Array(8).fill("KINETIC · GLITCH · ECHO · TYPE · MOTION · LANGUAGE · FORM · ").map((t, i) => (
+            {Array(8).fill("TYPE IS STRANGE · HOVER SOMETHING · WATCH IT BREAK · LETTERS HAVE WEIGHT · SCATTER · ECHO · CORRUPT · ").map((t, i) => (
               <span key={i} className="font-display" style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--acid)" }}>{t}</span>
             ))}
           </div>
@@ -93,13 +93,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ borderTop: "1px solid var(--ink)", paddingTop: "2rem", paddingBottom: "4rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
-        {[{ value: "03", label: "Experiments" }, { value: "∞", label: "Interactions" }, { value: "01", label: "Obsession" }].map((s) => (
-          <div key={s.label}>
-            <div className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 4rem)", fontWeight: 200, letterSpacing: "-0.02em" }}>{s.value}</div>
-            <div className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginTop: "0.25rem" }}>{s.label}</div>
-          </div>
-        ))}
+      <section style={{ borderTop: "1px solid var(--ink)", paddingTop: "2rem", paddingBottom: "4rem" }}>
+        <p className="font-mono animate-fade-up" style={{
+          fontSize: "0.8rem",
+          lineHeight: 1.9,
+          color: "var(--slate)",
+          maxWidth: "600px",
+          marginLeft: "-0.25rem",
+        }}>
+          Built this to scratch an itch. Kept asking what type looks like when it actually responds to you — not hover colour changes, but genuine movement. These three are as far as I got. There will probably be more.
+        </p>
+        <p className="font-mono animate-fade-up delay-200" style={{
+          fontSize: "0.6rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "var(--mist)",
+          marginTop: "3rem",
+          textAlign: "right",
+        }}>
+          2025
+        </p>
       </section>
     </div>
   );

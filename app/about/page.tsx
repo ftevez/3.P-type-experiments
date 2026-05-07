@@ -1,6 +1,6 @@
 export const metadata = {
   title: "About — Type Experiments",
-  description: "About this typographic laboratory",
+  description: "About this project",
 };
 
 export default function AboutPage() {
@@ -13,9 +13,9 @@ export default function AboutPage() {
             ABOUT THIS PROJECT
           </span>
           <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.03em", lineHeight: 0.9 }}>
-            A Lab for<br />
-            <span style={{ WebkitTextStroke: "2px var(--ink)", color: "transparent" }}>Living</span><br />
-            Type
+            Making<br />
+            <span style={{ WebkitTextStroke: "2px var(--ink)", color: "transparent" }}>Type</span><br />
+            Move
           </h1>
         </div>
 
@@ -23,10 +23,10 @@ export default function AboutPage() {
           <div className="animate-fade-up delay-200">
             <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1rem" }}>WHAT IS THIS —</p>
             <p className="font-serif" style={{ fontSize: "1.25rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              Type Experiments is a laboratory for typographic interaction. Each experiment takes a single concept — motion, corruption, depth — and pushes it to an extreme.
+              I started wondering what type could do if you actually touched it. Not scroll-triggered hero text — just letters with physics, bad behavior, and a reason to hover.
             </p>
             <p className="font-mono" style={{ fontSize: "0.8rem", lineHeight: 1.8, color: "var(--slate)" }}>
-              The goal isn't utility. It's curiosity. What happens when letterforms become responsive objects? When text carries physical weight? When repetition transforms language into pure form?
+              None of this is practical. That's fine. I built these to understand how they'd feel, and they kept surprising me. Each one started as a single question and turned into an afternoon.
             </p>
           </div>
 
@@ -38,7 +38,6 @@ export default function AboutPage() {
                 ["Language", "TypeScript"],
                 ["Styling", "CSS Variables + Tailwind"],
                 ["Fonts", "Unbounded · DM Serif · Space Mono"],
-                ["Icons", "Lucide React"],
                 ["Hosting", "Vercel"],
               ].map(([key, val]) => (
                 <div key={key} style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid var(--mist)", padding: "0.75rem 0" }}>
@@ -69,12 +68,13 @@ export default function AboutPage() {
 
         <div className="animate-fade-up delay-600" style={{ marginTop: "5rem", borderLeft: "3px solid var(--rust)", paddingLeft: "2rem" }}>
           <blockquote className="font-serif" style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)", lineHeight: 1.5, fontStyle: "italic", margin: 0 }}>
-            "Typography is the craft of endowing human language with a durable visual form."
+            "I spent three hours making letters scatter correctly and felt unreasonably satisfied about it."
           </blockquote>
           <cite className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", display: "block", marginTop: "1rem" }}>
-            — Robert Bringhurst
+            — while building this
           </cite>
         </div>
+
       </div>
     </div>
   );
