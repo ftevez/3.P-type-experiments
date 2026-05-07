@@ -81,8 +81,7 @@ export default function Home() {
                   <span className="font-mono" style={{ fontSize: "0.65rem", color: "var(--slate)", letterSpacing: "0.2em" }}>EXP {exp.number}</span>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: exp.color, display: "block" }} />
                 </div>
-                <h2 className="font-display" style={{ fontSize: "1.8rem", fontWeight: 700, letterSpacing: "-0.02em", textTransform: "uppercase", lineHeight: 1, marginBottom: "0.25rem" }}>{exp.title}</h2>
-                <p className="font-serif" style={{ fontSize: "1rem", fontStyle: "italic", color: "var(--slate)", marginBottom: "1rem" }}>{exp.subtitle}</p>
+                <h2 className="font-display" style={{ fontSize: "1.8rem", fontWeight: 700, letterSpacing: "-0.02em", textTransform: "uppercase", lineHeight: 1, marginBottom: "1rem" }}>{exp.title}</h2>
                 <p className="font-mono" style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "var(--slate)" }}>{exp.description}</p>
               </div>
             </Link>
