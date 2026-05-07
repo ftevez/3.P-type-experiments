@@ -70,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ paddingBottom: "4rem" }}>
+      <section style={{ paddingBottom: "8rem" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.5rem" }}>
           {experiments.map((exp, i) => (
             <Link key={exp.slug} href={`/experiments/${exp.slug}`} className="experiment-card animate-fade-up"
@@ -93,27 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ borderTop: "1px solid var(--ink)", paddingTop: "2rem", paddingBottom: "4rem" }}>
-        <p className="font-mono animate-fade-up" style={{
-          fontSize: "0.8rem",
-          lineHeight: 1.9,
-          color: "var(--slate)",
-          maxWidth: "600px",
-          marginLeft: "-0.25rem",
-        }}>
-          Built this to scratch an itch. Kept asking what type looks like when it actually responds to you — not hover colour changes, but genuine movement. These three are as far as I got. There will probably be more.
-        </p>
-        <p className="font-mono animate-fade-up delay-200" style={{
-          fontSize: "0.6rem",
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          color: "var(--mist)",
-          marginTop: "3rem",
-          textAlign: "right",
-        }}>
-          2025
-        </p>
-      </section>
     </div>
   );
 }
