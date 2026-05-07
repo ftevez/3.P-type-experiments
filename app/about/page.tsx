@@ -6,7 +6,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
-      <div style={{ paddingTop: "4rem", paddingBottom: "6rem" }}>
+      <div style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
 
         <div className="animate-fade-up" style={{ borderBottom: "1px solid var(--ink)", paddingBottom: "3rem", marginBottom: "4rem" }}>
           <span className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", display: "block", marginBottom: "1rem" }}>
@@ -22,11 +22,8 @@ export default function AboutPage() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem" }}>
           <div className="animate-fade-up delay-200">
             <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1rem" }}>WHAT IS THIS —</p>
-            <p className="font-serif" style={{ fontSize: "1.25rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              I started wondering what type could do if you actually touched it. Not scroll-triggered hero text — just letters with physics, bad behavior, and a reason to hover.
-            </p>
-            <p className="font-mono" style={{ fontSize: "0.8rem", lineHeight: 1.8, color: "var(--slate)" }}>
-              None of this is practical. That's fine. I built these to understand how they'd feel, and they kept surprising me. Each one started as a single question and turned into an afternoon.
+            <p className="font-serif" style={{ fontSize: "1.25rem", lineHeight: 1.7 }}>
+              Cool little type project; none of it is practical, just aesthetically pleasing to look at.
             </p>
           </div>
 
@@ -49,7 +46,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="animate-fade-up delay-500" style={{ borderTop: "1px solid var(--ink)", marginTop: "5rem", paddingTop: "3rem" }}>
+        <div className="animate-fade-up delay-500" style={{ borderTop: "1px solid var(--ink)", marginTop: "5rem", paddingTop: "3rem", paddingBottom: "1rem" }}>
           <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "2rem" }}>EXPERIMENTS —</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
             {[
@@ -66,14 +63,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="animate-fade-up delay-600" style={{ marginTop: "5rem", borderLeft: "3px solid var(--rust)", paddingLeft: "2rem" }}>
-          <blockquote className="font-serif" style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)", lineHeight: 1.5, fontStyle: "italic", margin: 0 }}>
-            "I spent three hours making letters scatter correctly and felt unreasonably satisfied about it."
-          </blockquote>
-          <cite className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", display: "block", marginTop: "1rem" }}>
-            — while building this
-          </cite>
-        </div>
 
       </div>
     </div>
