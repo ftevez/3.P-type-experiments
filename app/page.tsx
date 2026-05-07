@@ -50,7 +50,7 @@ export default function Home() {
 
         <div className="animate-fade-up delay-300" style={{ marginTop: "2rem", maxWidth: "520px" }}>
           <p className="font-mono" style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "var(--slate)" }}>
-            Three experiments in what type can do when you actually mess with it. Started with a question. Ended up here.
+            Messing around with type.
           </p>
         </div>
 
