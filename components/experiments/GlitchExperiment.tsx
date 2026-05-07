@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 const GLITCH_CHARS = "!<>-_\\/[]{}—=+*^?#@$%&░▒▓█▄▀■□▪▫";
 
-function useGlitch(text: string, active: boolean) {
+function useGlitch(text: string, active: boolean, intensity: number) {
   const [displayed, setDisplayed] = useState(text);
   const frameRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const iterRef = useRef(0);
@@ -24,6 +24,7 @@ function useGlitch(text: string, active: boolean) {
           .map((char, idx) => {
             if (char === " ") return " ";
             if (idx < iterRef.current / 3) return char;
+            if (Math.random() > intensity / 100) return char;
             return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
           })
           .join("")
@@ -36,7 +37,7 @@ function useGlitch(text: string, active: boolean) {
     }, 30);
 
     return () => { if (frameRef.current) clearInterval(frameRef.current); };
-  }, [text, active]);
+  }, [text, active, intensity]);
 
   return displayed;
 }
@@ -46,7 +47,8 @@ const presets = ["GLITCH", "CORRUPTED", "DIGITAL DECAY", "ERROR 404", "SYSTEM FA
 export default function GlitchExperiment() {
   const [inputText, setInputText] = useState("GLITCH");
   const [glitching, setGlitching] = useState(false);
-  const displayed = useGlitch(inputText.toUpperCase(), glitching);
+  const [intensity, setIntensity] = useState(50);
+  const displayed = useGlitch(inputText.toUpperCase(), glitching, intensity);
 
   const triggerGlitch = () => {
     setGlitching(true);
@@ -180,6 +182,16 @@ export default function GlitchExperiment() {
         >
           CORRUPT
         </button>
+      </div>
+
+      <div style={{ marginBottom: "2rem" }}>
+        <label className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: "0.75rem", color: "var(--slate)" }}>
+          INTENSITY — {intensity}%
+        </label>
+        <input type="range" min={1} max={100} value={intensity}
+          onChange={(e) => setIntensity(Number(e.target.value))}
+          style={{ width: "240px", accentColor: "var(--rust)" }}
+        />
       </div>
 
       <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem" }}>
