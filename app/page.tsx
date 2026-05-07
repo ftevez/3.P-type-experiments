@@ -6,7 +6,7 @@ const experiments = [
     number: "00",
     title: "Kinetic Text",
     subtitle: "Words in motion",
-    description: "Letters that scatter when you hover over them and snap back when you leave. Simple premise, surprisingly satisfying.",
+    description: "Letters that scatter when you hover over them and snap back when you leave.",
     tags: ["Motion", "Cursor", "CSS"],
     color: "var(--acid)",
   },
@@ -15,7 +15,7 @@ const experiments = [
     number: "01",
     title: "Glitch Machine",
     subtitle: "Corrupted language",
-    description: "Type something and watch it fall apart. The corrupted version is usually more interesting than what you typed.",
+    description: "Type something and watch it fall apart.",
     tags: ["Glitch", "Input", "Animation"],
     color: "var(--rust)",
   },
@@ -24,7 +24,7 @@ const experiments = [
     number: "02",
     title: "Echo Chamber",
     subtitle: "Depth through repetition",
-    description: "A single word, echoed through layers of transparency and scale. Push the depth far enough and it stops looking like language.",
+    description: "A single word echoed through layers of transparency and scale.",
     tags: ["Layers", "Depth", "Interactive"],
     color: "#a0c4ff",
   },
@@ -76,17 +76,14 @@ export default function Home() {
             <Link key={exp.slug} href={`/experiments/${exp.slug}`} className="experiment-card animate-fade-up"
               style={{ animationDelay: `${0.2 + i * 0.15}s`, opacity: 0, background: "var(--paper)", padding: "0", overflow: "hidden" }}>
               <div style={{ height: "4px", background: exp.color }} />
-              <div style={{ padding: "2rem" }}>
+              <div style={{ padding: "2rem 2rem 2.75rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
                   <span className="font-mono" style={{ fontSize: "0.65rem", color: "var(--slate)", letterSpacing: "0.2em" }}>EXP {exp.number}</span>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: exp.color, display: "block" }} />
                 </div>
                 <h2 className="font-display" style={{ fontSize: "1.8rem", fontWeight: 700, letterSpacing: "-0.02em", textTransform: "uppercase", lineHeight: 1, marginBottom: "0.25rem" }}>{exp.title}</h2>
                 <p className="font-serif" style={{ fontSize: "1rem", fontStyle: "italic", color: "var(--slate)", marginBottom: "1rem" }}>{exp.subtitle}</p>
-                <p className="font-mono" style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "var(--slate)", marginBottom: "1.5rem" }}>{exp.description}</p>
-                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-                  {exp.tags.map(tag => <span key={tag} className="tag" style={{ fontSize: "0.6rem" }}>{tag}</span>)}
-                </div>
+                <p className="font-mono" style={{ fontSize: "0.75rem", lineHeight: 1.7, color: "var(--slate)" }}>{exp.description}</p>
               </div>
             </Link>
           ))}
