@@ -6,19 +6,19 @@ import EchoExperiment from "@/components/experiments/EchoExperiment";
 const experiments = {
   kinetic: {
     title: "Kinetic Text",
-    number: "001",
+    number: "00",
     description: "Letters that respond to your cursor — scatter and snap.",
     component: KineticExperiment,
   },
   glitch: {
     title: "Glitch Machine",
-    number: "002",
+    number: "01",
     description: "Text that dissolves into digital corruption.",
     component: GlitchExperiment,
   },
   echo: {
     title: "Echo Chamber",
-    number: "003",
+    number: "02",
     description: "A word that echoes through infinite typographic depth.",
     component: EchoExperiment,
   },
@@ -51,7 +51,7 @@ export default async function ExperimentPage({ params }: { params: Promise<{ slu
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1rem" }}>
           <div>
             <span className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--slate)", display: "block", marginBottom: "0.5rem" }}>
-              EXP.{exp.number}
+              EXP {exp.number}
             </span>
             <h1 className="font-display" style={{
               fontSize: "clamp(2rem, 6vw, 5rem)",

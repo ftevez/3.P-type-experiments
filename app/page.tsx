@@ -3,7 +3,7 @@ import Link from "next/link";
 const experiments = [
   {
     slug: "kinetic",
-    number: "001",
+    number: "00",
     title: "Kinetic Text",
     subtitle: "Words in motion",
     description: "Letters that scatter when you hover over them and snap back when you leave. Simple premise, surprisingly satisfying.",
@@ -12,7 +12,7 @@ const experiments = [
   },
   {
     slug: "glitch",
-    number: "002",
+    number: "01",
     title: "Glitch Machine",
     subtitle: "Corrupted language",
     description: "Type something and watch it fall apart. The corrupted version is usually more interesting than what you typed.",
@@ -21,7 +21,7 @@ const experiments = [
   },
   {
     slug: "echo",
-    number: "003",
+    number: "02",
     title: "Echo Chamber",
     subtitle: "Depth through repetition",
     description: "A single word, echoed through layers of transparency and scale. Push the depth far enough and it stops looking like language.",
@@ -78,7 +78,7 @@ export default function Home() {
               <div style={{ height: "4px", background: exp.color }} />
               <div style={{ padding: "2rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
-                  <span className="font-mono" style={{ fontSize: "0.65rem", color: "var(--slate)", letterSpacing: "0.2em" }}>EXP.{exp.number}</span>
+                  <span className="font-mono" style={{ fontSize: "0.65rem", color: "var(--slate)", letterSpacing: "0.2em" }}>EXP {exp.number}</span>
                   <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: exp.color, display: "block" }} />
                 </div>
                 <h2 className="font-display" style={{ fontSize: "1.8rem", fontWeight: 700, letterSpacing: "-0.02em", textTransform: "uppercase", lineHeight: 1, marginBottom: "0.25rem" }}>{exp.title}</h2>
