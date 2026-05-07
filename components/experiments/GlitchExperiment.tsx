@@ -46,7 +46,6 @@ const presets = ["GLITCH", "CORRUPTED", "DIGITAL DECAY", "ERROR 404", "SYSTEM FA
 export default function GlitchExperiment() {
   const [inputText, setInputText] = useState("GLITCH");
   const [glitching, setGlitching] = useState(false);
-  const [intensity, setIntensity] = useState(50);
   const displayed = useGlitch(inputText.toUpperCase(), glitching);
 
   const triggerGlitch = () => {
@@ -67,7 +66,6 @@ export default function GlitchExperiment() {
         ↑ Type anything below. The text auto-glitches. Hit the button for a full corruption cycle.
       </p>
 
-      {/* Main glitch display */}
       <div style={{
         background: "var(--ink)",
         border: "2px solid var(--rust)",
@@ -80,7 +78,6 @@ export default function GlitchExperiment() {
         position: "relative",
         overflow: "hidden",
       }}>
-        {/* Scanlines */}
         <div style={{
           position: "absolute",
           inset: 0,
@@ -88,9 +85,8 @@ export default function GlitchExperiment() {
           pointerEvents: "none",
         }} />
 
-        {/* Glitch layers */}
         <div style={{ position: "relative" }}>
-          {/* Red channel shift */}
+          {/* Red channel */}
           <div className="font-display" style={{
             position: "absolute",
             inset: 0,
@@ -105,7 +101,7 @@ export default function GlitchExperiment() {
           }}>
             {displayed}
           </div>
-          {/* Blue channel shift */}
+          {/* Blue channel */}
           <div className="font-display" style={{
             position: "absolute",
             inset: 0,
@@ -120,7 +116,6 @@ export default function GlitchExperiment() {
           }}>
             {displayed}
           </div>
-          {/* Main text */}
           <div className="font-display" style={{
             fontSize: "clamp(2.5rem, 8vw, 6rem)",
             fontWeight: 900,
@@ -134,7 +129,6 @@ export default function GlitchExperiment() {
           </div>
         </div>
 
-        {/* Status indicator */}
         <div style={{ position: "absolute", top: "1rem", right: "1rem", display: "flex", gap: "0.5rem", alignItems: "center" }}>
           <div style={{
             width: "6px",
@@ -149,7 +143,6 @@ export default function GlitchExperiment() {
         </div>
       </div>
 
-      {/* Input */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
         <input
           value={inputText}
@@ -189,7 +182,6 @@ export default function GlitchExperiment() {
         </button>
       </div>
 
-      {/* Preset words */}
       <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem" }}>
         <span className="font-mono" style={{ fontSize: "0.65rem", color: "var(--slate)", alignSelf: "center" }}>PRESETS:</span>
         {presets.map((p) => (
@@ -210,7 +202,6 @@ export default function GlitchExperiment() {
         ))}
       </div>
 
-      {/* ASCII art section */}
       <div style={{ borderTop: "1px solid var(--ink)", paddingTop: "2.5rem" }}>
         <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1.5rem" }}>SYSTEM LOG —</p>
         <div style={{ background: "var(--ink)", padding: "1.5rem", fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", lineHeight: 1.8, color: "#00ff88" }}>

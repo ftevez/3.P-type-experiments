@@ -24,7 +24,7 @@ const experiments = [
     number: "003",
     title: "Echo Chamber",
     subtitle: "Depth through repetition",
-    description: "A single word echoes through layers of transparency and scale. Control depth, speed, and drift to create infinite typographic space.",
+    description: "A single word echoes through layers of transparency and scale. Control depth, spread, and hue to sculpt infinite typographic space.",
     tags: ["Layers", "Depth", "Interactive"],
     color: "#a0c4ff",
   },

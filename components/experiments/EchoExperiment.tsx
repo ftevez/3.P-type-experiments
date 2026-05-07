@@ -85,7 +85,7 @@ export default function EchoExperiment() {
         {/* Corner info */}
         <div style={{ position: "absolute", bottom: "1rem", left: "1rem" }}>
           <span className="font-mono" style={{ fontSize: "0.55rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.15em" }}>
-            {layers} LAYERS · SPREAD {spread}
+            {layers} LAYERS · SPREAD {spread}%
           </span>
         </div>
       </div>

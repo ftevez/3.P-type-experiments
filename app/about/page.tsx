@@ -8,7 +8,6 @@ export default function AboutPage() {
     <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
       <div style={{ paddingTop: "4rem", paddingBottom: "6rem" }}>
 
-        {/* Header */}
         <div className="animate-fade-up" style={{ borderBottom: "1px solid var(--ink)", paddingBottom: "3rem", marginBottom: "4rem" }}>
           <span className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", display: "block", marginBottom: "1rem" }}>
             ABOUT THIS PROJECT
@@ -35,7 +34,7 @@ export default function AboutPage() {
             <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1.5rem" }}>BUILT WITH —</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               {[
-                ["Framework", "Next.js 15 (App Router)"],
+                ["Framework", "Next.js 16 (App Router)"],
                 ["Language", "TypeScript"],
                 ["Styling", "CSS Variables + Tailwind"],
                 ["Fonts", "Unbounded · DM Serif · Space Mono"],
@@ -51,7 +50,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Experiments list */}
         <div className="animate-fade-up delay-500" style={{ borderTop: "1px solid var(--ink)", marginTop: "5rem", paddingTop: "3rem" }}>
           <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "2rem" }}>EXPERIMENTS —</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
@@ -69,7 +67,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Quote */}
         <div className="animate-fade-up delay-600" style={{ marginTop: "5rem", borderLeft: "3px solid var(--rust)", paddingLeft: "2rem" }}>
           <blockquote className="font-serif" style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)", lineHeight: 1.5, fontStyle: "italic", margin: 0 }}>
             "Typography is the craft of endowing human language with a durable visual form."

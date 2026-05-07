@@ -47,7 +47,6 @@ export default async function ExperimentPage({ params }: { params: Promise<{ slu
 
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
-      {/* Header */}
       <div className="animate-fade-up" style={{ paddingTop: "3rem", paddingBottom: "2rem", borderBottom: "1px solid var(--ink)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1rem" }}>
           <div>
@@ -75,7 +74,6 @@ export default async function ExperimentPage({ params }: { params: Promise<{ slu
         </div>
       </div>
 
-      {/* Experiment */}
       <div className="animate-fade-up delay-200" style={{ paddingTop: "3rem", paddingBottom: "4rem" }}>
         <ExperimentComponent />
       </div>

@@ -1,19 +1,22 @@
 "use client";
 import { useState, useEffect } from "react";
 
-function Letter({ char, index, exploding }: { char: string; index: number; exploding: boolean }) {
+function Letter({ char, exploding }: { char: string; exploding: boolean }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [rotation, setRotation] = useState(0);
   const [hovered, setHovered] = useState(false);
 
   const scatter = () => {
     const angle = Math.random() * Math.PI * 2;
     const dist = 40 + Math.random() * 80;
     setOffset({ x: Math.cos(angle) * dist, y: Math.sin(angle) * dist });
+    setRotation((Math.random() - 0.5) * 30);
     setHovered(true);
   };
 
   const snap = () => {
     setOffset({ x: 0, y: 0 });
+    setRotation(0);
     setHovered(false);
   };
 
@@ -28,13 +31,12 @@ function Letter({ char, index, exploding }: { char: string; index: number; explo
       onMouseLeave={snap}
       style={{
         display: "inline-block",
-        transform: `translate(${offset.x}px, ${offset.y}px) rotate(${hovered ? (Math.random() - 0.5) * 30 : 0}deg)`,
+        transform: `translate(${offset.x}px, ${offset.y}px) rotate(${rotation}deg)`,
         transition: hovered
           ? "transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
           : "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
         cursor: "default",
         color: hovered ? "var(--rust)" : "var(--ink)",
-        animationDelay: `${index * 0.05}s`,
       }}
     >
       {char}
@@ -61,12 +63,10 @@ export default function KineticExperiment() {
 
   return (
     <div>
-      {/* Instructions */}
       <p className="font-mono" style={{ fontSize: "0.75rem", color: "var(--slate)", marginBottom: "3rem", letterSpacing: "0.05em" }}>
         ↑ Hover over individual letters to scatter them. They snap back when you leave.
       </p>
 
-      {/* Main kinetic display */}
       <div style={{
         border: "1px solid var(--ink)",
         padding: "4rem 3rem",
@@ -87,11 +87,10 @@ export default function KineticExperiment() {
           userSelect: "none",
         }}>
           {phrases[currentPhrase].split("").map((char, i) => (
-            <Letter key={`${currentPhrase}-${i}`} char={char} index={i} exploding={exploded} />
+            <Letter key={`${currentPhrase}-${i}`} char={char} exploding={exploded} />
           ))}
         </div>
 
-        {/* Corner label */}
         <span className="font-mono" style={{
           position: "absolute",
           bottom: "1rem",
@@ -104,7 +103,6 @@ export default function KineticExperiment() {
         </span>
       </div>
 
-      {/* Controls */}
       <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center", marginBottom: "3rem" }}>
         <span className="font-mono" style={{ fontSize: "0.7rem", color: "var(--slate)", letterSpacing: "0.1em" }}>SWITCH WORD:</span>
         {phrases.map((phrase, i) => (
@@ -129,7 +127,6 @@ export default function KineticExperiment() {
         ))}
       </div>
 
-      {/* Explode button */}
       <button
         onClick={explodeAll}
         style={{
@@ -150,7 +147,6 @@ export default function KineticExperiment() {
         {exploded ? "SCATTERED!" : "EXPLODE ALL"}
       </button>
 
-      {/* Secondary demo: staggered entrance */}
       <div style={{ borderTop: "1px solid var(--ink)", paddingTop: "3rem" }}>
         <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1.5rem" }}>
           STAGGERED ENTRANCE —
@@ -168,7 +164,7 @@ export default function KineticExperiment() {
                 color: char === " " ? "transparent" : "var(--ink)",
               }}
             >
-              {char === " " ? "\u00A0" : char}
+              {char === " " ? " " : char}
             </span>
           ))}
         </div>
