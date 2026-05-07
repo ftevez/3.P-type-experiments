@@ -179,24 +179,12 @@ export default function EchoExperiment() {
 
       {/* Theory note */}
       <div style={{ borderTop: "1px solid var(--ink)", paddingTop: "2rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
-          <div>
-            <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1rem" }}>
-              CONCEPT —
-            </p>
-            <p className="font-serif" style={{ fontSize: "1rem", lineHeight: 1.7, fontStyle: "italic" }}>
-              "Repetition transforms. What begins as language becomes texture, then pattern, then pure visual form."
-            </p>
-          </div>
-          <div>
-            <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1rem" }}>
-              TECHNIQUE —
-            </p>
-            <p className="font-mono" style={{ fontSize: "0.72rem", lineHeight: 1.8, color: "var(--slate)" }}>
-              Each layer is scaled by a constant factor from the center. Opacity and blur decrease with depth. Chromatic hue shifts per layer.
-            </p>
-          </div>
-        </div>
+        <p className="font-mono" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--slate)", marginBottom: "1rem" }}>
+          TECHNIQUE —
+        </p>
+        <p className="font-mono" style={{ fontSize: "0.72rem", lineHeight: 1.8, color: "var(--slate)" }}>
+          Each layer is scaled by a constant factor from the center. Opacity and blur decrease with depth. Chromatic hue shifts per layer.
+        </p>
       </div>
     </div>
   );
